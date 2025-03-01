@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservation</title>
+    <link rel="stylesheet" href="/css/homestyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="Top">
+        <div class="logo"> 
+            <span class="highlight">Achiev</span>ers<span class="orange">IT</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#Top">Home</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#service">Services</a></li>
+            <li><a href="#review">Review</a></li>
+            <li><a href="#about">About Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>HOTEL RESERVATION</h1>
+            <p>Book Online Now!</p>
+            <div class="hero-buttons">
+                <a href="/booking" class="btn">New Reservation</a>
+                <a href="/reservations" class="btn">Your Reservations</a>
+                <a href="/logout" class="btn">Sign Out</a>
+                <!-- <button class="btn"><a href="/booking">New Reservation</a></button>
+                <button class="btn">Your Reservations</button>
+                <button class="btn btn-dark">Sign Out</button> -->
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hotel Rooms and Suites Section -->
+<section class="rooms-section" id="rooms">
+    <h2>Hotel Rooms and Suites</h2>
+    <div class="rooms-container">
+        <div class="room-card">
+            <img src="https://webbox.imgix.net/images/owvecfmxulwbfvxm/c56a0c0d-8454-431a-9b3e-f420c72e82e3.jpg?auto=format,compress&fit=crop&crop=entropy"
+            alt="Single Room">
+            <p>Single Room:</p>
+        </div>
+        <div class="room-card">
+            <img src="https://djmzubtjl6upi.cloudfront.net/wp-content/uploads/sites/3/2017/12/Deluxe-Double-Guestroom2.jpg"
+            alt="Double Room">
+            <p>Double Room:</p>
+        </div>
+        <div class="room-card">
+            <img src="https://www.trimcastlehotel.com/wp-content/uploads/2023/08/image-8-1.jpg"
+            alt="Family Room">
+            <p>Family Room:</p>
+        </div>
+        <div class="room-card">
+            <img src="https://media.istockphoto.com/id/157316138/photo/beautiful-romantic-honeymoon-hotel-suite-empty-copy-space.jpg?s=612x612&w=0&k=20&c=W-8Kh1flB8J-6DjlRg525k-L0briklgZNs62tzRFX6k="
+            alt="Honeymoon Suite">
+            <p>Honeymoon Suite:</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Facilities and Services Section -->
+<section class="facilities-section" id="service">
+    <h2>OUR FACILITIES AND SERVICES</h2>
+    <div class="facilities-container">
+        <div class="facility">
+            <i class="fas fa-concierge-bell"></i>
+            <h3>Room Service</h3>
+            <p>Enjoy your stay with excellent and timely room service.</p>
+        </div>
+        <div class="facility">
+            <i class="fas fa-coffee"></i>
+            <h3>Free Breakfast</h3>
+            <p>Enjoy free breakfast every morning.</p>
+        </div>
+        <div class="facility">
+            <i class="fas fa-parking"></i>
+            <h3>Free Parking</h3>
+            <p>No need to pay extra charges to park your vehicle.</p>
+        </div>
+        <div class="facility">
+            <i class="fas fa-spa"></i>
+            <h3>Free Spa</h3>
+            <p>Relax at the in-house spa once every day of your stay.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Hotel Review Section -->
+<section class="hotel-review" id="review">
+    <h2>Hotel Review</h2>
+    <div class="carousel">
+        <button class="prev-btn">&#10094;</button>
+        <div class="carousel-container">
+            <img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hotel Review 1">
+            <img src="https://images.pexels.com/photos/1579253/pexels-photo-1579253.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hotel Review 2">
+            <img src="https://images.pexels.com/photos/70441/pexels-photo-70441.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hotel Review 3">
+            <!--<img src="https://images.pexels.com/photos/261169/pexels-photo-261169.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hotel Review 4">-->
+            <!--<img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hotel Review 5">-->
+        </div>
+        <button class="next-btn">&#10095;</button>
+    </div>
+</section>
+
+<footer id="about">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Me</h3>
+            <p><strong>Poovanandhan</strong></p>
+        </div>
+        <div class="footer-section">
+            <h3>Social Links</h3>
+            <a href="#"><i class="fab fa-github"></i> GitHub Account</a>
+            <a href="#"><i class="fab fa-linkedin"></i> LinkedIn Account</a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p><i class="fas fa-map-marker-alt"></i> India</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright &copy;2025 All rights reserved | <strong>Developed By: Poovanandhan</strong></p>
+        <p>Hotel Reservation | Hotel Reservation | Mr. Poovanandhan</p>
+    </div>
+</footer>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function () {
+    const images = [
+            "https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "https://images.pexels.com/photos/1579253/pexels-photo-1579253.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "https://images.pexels.com/photos/70441/pexels-photo-70441.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "https://images.pexels.com/photos/261169/pexels-photo-261169.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ];
+
+    const carouselContainer = document.querySelector('.carousel-container');
+    let index = 0;
+
+    function updateCarousel() {
+        carouselContainer.innerHTML = `
+            <img src="${images[(index) % images.length]}" class="side-img">
+            <img src="${images[(index + 1) % images.length]}" class="center-img">
+            <img src="${images[(index + 2) % images.length]}" class="side-img">
+        `;
+    }
+
+    function nextSlide() {
+        index = (index + 1) % images.length;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        index = (index - 1 + images.length) % images.length;
+        updateCarousel();
+    }
+
+    document.querySelector('.next-btn').addEventListener('click', nextSlide);
+    document.querySelector('.prev-btn').addEventListener('click', prevSlide);
+
+    setInterval(nextSlide, 1500); // Auto-slide every 1 sec
+    updateCarousel();
+});
+
+</script>
+
+</body>
+</html>

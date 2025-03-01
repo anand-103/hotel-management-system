@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="/css/bookingstyles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="Top">
+        <div class="logo"> 
+            <span class="highlight">Achiev</span>ers<span class="orange">IT</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/reservations">Reservations</a></li>
+            <li><a href="/booking">Booking</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>NEW RESERVATION</h1>
+            <div class="hero-buttons">
+                <a href="/reservations" class="btn">Your Reservations</a>
+                <a href="/home" class="btn">Back Home</a>
+                <!-- <button class="btn"><a href="/booking">New Reservation</a></button>
+                <button class="btn">Your Reservations</button>
+                <button class="btn btn-dark">Sign Out</button> -->
+            </div>
+        </div>
+    </header>
+    
+<section class="booking-container">
+    <h2>Hotel Booking</h2>
+
+    <!-- Success Message -->
+    <div th:if="${successMessage}" style="color: green; text-align: center;">
+        <p th:text="${successMessage}"></p>
+    </div>
+
+    <form action="/submit-booking" method="post" id="booking-form">
+        <label>Room/Suite Type:</label>
+        <select name="roomType" id="roomType" onchange="calculateTotal()">
+            <option value="Single Room" data-price="1000">Single Room</option>
+            <option value="Double Room" data-price="2000">Double Room</option>
+            <option value="Family Room" data-price="3000">Family Room</option>
+            <option value="Honeymoon" data-price="5000">Honeymoon</option>
+        </select>
+
+        <label>Period of Stay (Nights):</label>
+        <input type="number" name="periodOfStay" id="stayPeriod" value="1" min="1" onchange="calculateTotal()" required>
+
+        <label>Number of Rooms/Suites:</label>
+        <input type="number" name="numRooms" id="numRooms" value="1" min="1" onchange="calculateTotal()" required>
+
+        <label>Number of Persons:</label>
+        <input type="number" name="numPersons" id="numPersons" value="1" min="1" onchange="calculateTotal()" required>
+
+        <label>Number of Children:</label>
+        <input type="number" name="numChildren" id="numChildren" value="0" min="0" required>
+
+        <label>Restaurant Open Buffet:</label>
+        <select name="buffet" id="restaurantBuffet">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label>Arrival Date:</label>
+        <input type="date" name="arrivalDate" id="arrivalDate" required>
+
+        <h3>Total: $<span id="totalAmountText">0</span></h3>
+        <input type="hidden" name="totalAmount" id="hiddenTotalAmount" value="0">
+
+        <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
+    </form>
+</section>
+
+
+    
+    <footer id="about">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Me</h3>
+            <p><strong>Poovanandhan</strong></p>
+        </div>
+        <div class="footer-section">
+            <h3>Social Links</h3>
+            <a href="#"><i class="fab fa-github"></i> GitHub Account</a>
+            <a href="#"><i class="fab fa-linkedin"></i> LinkedIn Account</a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p><i class="fas fa-map-marker-alt"></i> India</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright &copy;2025 All rights reserved | <strong>Developed By: Poovanandhan</strong></p>
+        <p>Hotel Reservation | Hotel Reservation | Mr. Poovanandhan</p>
+    </div>
+</footer> 
+
+
+<script>
+function calculateTotal() {
+    let roomTypeSelect = document.getElementById("roomType");
+    let roomPricePerPerson = parseInt(roomTypeSelect.options[roomTypeSelect.selectedIndex].dataset.price); 
+    let numPersons = parseInt(document.getElementById("numPersons").value);
+    let numRooms = parseInt(document.getElementById("numRooms").value);
+    let stayPeriod = parseInt(document.getElementById("stayPeriod").value);
+
+    if (isNaN(roomPricePerPerson) || isNaN(numPersons) || isNaN(numRooms) || isNaN(stayPeriod)) {
+        return;
+    }
+
+    let total = roomPricePerPerson * numPersons * numRooms * stayPeriod;
+    document.getElementById("totalAmountText").innerText = total;
+    document.getElementById("hiddenTotalAmount").value = total;
+}
+
+</script>
+</body>
+</html>
