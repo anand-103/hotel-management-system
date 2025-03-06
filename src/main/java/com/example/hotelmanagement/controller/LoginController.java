@@ -8,6 +8,6 @@ public class LoginController {
 
     @GetMapping("/login")
     public String loginPage() {
-        return "auth"; // Ensure this file exists in templates
+        return "auth";
     }
 }

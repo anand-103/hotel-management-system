@@ -73,7 +73,7 @@ public class ReservationController {
     public String editReservation(@PathVariable Long id, Model model) {
         Reservation reservation = reservationService.getReservationById(id);
         model.addAttribute("reservation", reservation);
-        return "edit-reservation"; // Returns the Thymeleaf template
+        return "edit-reservation";
     }
 
     @PostMapping("/reservations/update")

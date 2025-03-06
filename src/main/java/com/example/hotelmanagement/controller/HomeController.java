@@ -10,6 +10,6 @@ public class HomeController {
 
     @GetMapping("/home")
     public String homePage(HttpSession session, Model model) {
-        return "home"; // Ensure home.html exists in templates
+        return "home"; 
     }
 }
